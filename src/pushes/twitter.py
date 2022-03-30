@@ -19,7 +19,7 @@ def push_gif(path):
 
     media = api.media_upload(path)
     delta = datetime.now() - datetime(2021, 6, 19)
-    text = f"Wordle #{delta.days} in a GIF:"
+    text = f"Yesterday's Wordle #{delta.days - 1} in a GIF:"
 
     try:
         logger.info(f"Posting {path}")

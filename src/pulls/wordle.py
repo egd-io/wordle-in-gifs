@@ -12,7 +12,7 @@ logger = logging.getLogger(__name__)
 def get_answer(answers):
     delta = datetime.now() - datetime(2021, 6, 19)
 
-    return answers[delta.days]
+    return answers[delta.days - 1]
 
 
 def get_wordlist():
@@ -50,7 +50,7 @@ def get_wordlist():
             logger.info("Setting wordlist to False")
             wordlist = False
 
-        wordlist = re.search("Ma=[^O]+", response.text)
+        wordlist = re.search(r"Ma=[^O]+", response.text)
         wordlist = re.search(r"\[(.*)\]", wordlist.group())
         words = ""
         for word in wordlist.group():
