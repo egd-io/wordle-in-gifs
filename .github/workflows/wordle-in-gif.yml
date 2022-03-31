@@ -1,7 +1,7 @@
-name: Post Today's Wordle in a GIF
+name: Post Yesterday's Wordle in a GIF
 on:
   schedule:
-    - cron:  '21 13 * * *'
+    - cron:  '48 12 * * *'
 jobs:
   wordle-in-gif:
     name: Wordle in GIF
